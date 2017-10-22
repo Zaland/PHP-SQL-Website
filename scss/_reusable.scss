@@ -1,0 +1,54 @@
+/* ----- Reusable content ----- */
+.form-control {
+    color: #212121;
+}
+
+.btn-custom {
+    color: #fff;
+    background-color: #1fa67b;
+    
+    &:hover, &:focus {
+        color: #fff;
+        background-color: #1b916b;
+    }
+}
+
+// Table Colors
+.table-striped>thead {
+    background-color: #1fa67b;
+}
+
+
+// Set the background to be an image 
+body {
+    background-image: url("../img/background.png");
+    overflow-y:scroll;
+}
+
+// Change color of <hr> tag 
+hr {
+    border-color: #1fa67b;
+}
+
+.home-title {
+    text-align: center;
+    color: #1fa67b;
+}
+
+.home-text {
+    text-align: justify;
+    color: #1fa67b; 
+    font-size: 15px !important;
+}
+
+.jumbotron {
+    background-color: rgba(0, 0, 0, 0.4);
+    
+    & > hr {
+        border-color: #1fa67b;
+    }
+}
+
+.container {
+    padding-top: 20px;
+}
