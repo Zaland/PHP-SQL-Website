@@ -22,6 +22,7 @@
 // Set the background to be an image 
 body {
     background-image: url("../img/background.png");
+    background-attachment: fixed;
     overflow-y:scroll;
 }
 

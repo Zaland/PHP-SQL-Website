@@ -9,9 +9,6 @@
         <!-- Bootstrap CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
         
-        <!-- pnotify custom css -->
-        <link href="css/pnotify.custom.min.css" media="all" rel="stylesheet" type="text/css">
-        
         <!-- CSS styles -->
         <link href="css/styles.css" rel="stylesheet">
     </head>
