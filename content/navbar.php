@@ -11,7 +11,7 @@
                 <div class="navbar-collapse collapse navbar-inverse-collapse">
                     <ul class="nav navbar-nav">
                         <li id="home"><a href="index.php"> Home </a></li>
-                        <li id="viewallgames"><a href="#"> View All Games </a></li>
+                        <li id="viewgames"><a href="viewgames.php"> View Games </a></li>
                         <li id="searchgame"><a href="#"> Search Game </a></li>
                         <li id="contactus"><a href="#"> Contact Us </a></li>
                     </ul>

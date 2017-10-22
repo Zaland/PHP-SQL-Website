@@ -1,9 +1,9 @@
 <?php
     // load the header content
-    include("content/header.php");
+    require("content/header.php");
 
     // load the navbar
-    include("content/navbar.php");
+    require("content/navbar.php");
 ?>
     
             <div class="container">
@@ -38,5 +38,5 @@
 
 <?php
     // load the footer content
-    include("content/footer.php");
+    require("content/footer.php");
 ?>
