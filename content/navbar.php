@@ -11,13 +11,13 @@
                 <div class="navbar-collapse collapse navbar-inverse-collapse">
                     <ul class="nav navbar-nav">
                         <li id="home"><a href="index.php"> Home </a></li>
-                        <li id="viewallgames"><a href="viewallgames.php"> View All Games </a></li>
-                        <li id="searchgame"><a href="searchgames.php"> Search Game </a></li>
-                        <li id="contactus"><a href="contactus.php"> Contact Us </a></li>
+                        <li id="viewallgames"><a href="#"> View All Games </a></li>
+                        <li id="searchgame"><a href="#"> Search Game </a></li>
+                        <li id="contactus"><a href="#"> Contact Us </a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li id="register"><a href="register.php"> Register </a></li>
-                        <li id="login"><a href="login.php"> Login </a></li>
+                        <li id="register"><a href="#"> Register </a></li>
+                        <li id="login"><a href="#"> Login </a></li>
                     </ul>
                 </div>
             </div>
