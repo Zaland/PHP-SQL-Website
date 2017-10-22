@@ -6,6 +6,7 @@
 .btn-custom {
     color: #fff;
     background-color: #1fa67b;
+    font-size: 14px;
     
     &:hover, &:focus {
         color: #fff;
@@ -42,6 +43,13 @@ hr {
     font-size: 15px !important;
 }
 
+.register-title {
+    text-align: center;
+    color: #1fa67b !important;
+    margin-top: -15px;
+    margin-bottom: 25px;
+}
+
 .jumbotron {
     background-color: rgba(0, 0, 0, 0.4);
     
@@ -52,4 +60,12 @@ hr {
 
 .container {
     padding-top: 20px;
+}
+
+.showpass {
+    margin-left: 0px !important;
+}
+
+form {
+    color: #1fa67b;
 }
