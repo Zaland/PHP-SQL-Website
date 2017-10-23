@@ -1,3 +1,5 @@
+<?php session_start() ?>        
+
         <div class="container">
             <div class="navbar navbar-default">
                 <div class="navbar-header">
@@ -15,8 +17,16 @@
                         <li id="searchgame"><a href="#"> Search Game </a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li id="register"><a href="register.php"> Register </a></li>
-                        <li id="login"><a href="#"> Login </a></li>
+                        <?php
+                            if(isset($_SESSION['user'])) { 
+                                echo '  <li><a href="#"> Welcome back '.$_SESSION['user'].' </a></li>
+                                        <li id="logout"><a href="scripts/sign_out.php"> Logout </a></li>';
+                            }
+                            else {
+                                echo '  <li id="register"><a href="register.php"> Register </a></li>
+                                        <li id="login"><a href="login.php"> Login </a></li>';
+                            }
+                        ?>
                     </ul>
                 </div>
             </div>

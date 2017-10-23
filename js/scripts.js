@@ -12,7 +12,7 @@ function showPass() {
 
 $(document).ready(function() {
     // when the user clicks the registration button
-    // there are 3 error codes that are returned
+    // there are 3 error codes that can be returned
     // 0 = successful user creation
     // 1 = username already taken, user exists
     // 2 = something wrong with adding user to database
@@ -33,6 +33,32 @@ $(document).ready(function() {
                     $('.register-alerts').html('<div class="alert alert-danger" role="alert"> User account already exists </div>');
                 else
                     $('.register-alerts').html('<div class="alert alert-danger" role="alert"> Something went wrong creating a user </div>');
+            }
+        });
+    });
+    
+    // when the user clicks the login button
+    // there are 3 error codes that can be returned
+    // 0 = username and password match
+    // 1 = no user exists in the database
+    // 2 = username and password dont match
+    $('.login-btn').click(function(e) {
+        e.preventDefault();
+        
+        var username = $('#username').val();
+        var password = $('#password').val();
+
+        $.ajax({
+            type: 'GET',
+            url: 'scripts/sign_in.php',
+            data: {username:username, password:password},
+            success: function(result) {
+                if(result == 0)
+                    window.location.href = 'index.php';
+                else if(result == 1)
+                    $('.register-alerts').html('<div class="alert alert-danger" role="alert"> No such user exists </div>');
+                else
+                    $('.register-alerts').html('<div class="alert alert-danger" role="alert"> Username and/or password dont match </div>');
             }
         });
     });
