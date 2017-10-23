@@ -94,4 +94,33 @@ $(document).ready(function() {
             });
         }
     });
+    
+    // when the user clicks the add game button
+    // there are 3 error codes that can be returned
+    // 0 = successfully added game
+    // 1 = something went wrong with adding the game
+    // 2 = game already exists
+    $('.addgame-btn').click(function(e) {
+        e.preventDefault();
+        
+        var name = $('#name').val();
+        var developer = $('#developer').val();
+        var publisher = $('#publisher').val();
+        var price = $('#price').val();
+
+        $.ajax({
+            type: 'GET',
+            url: 'scripts/insert_games.php',
+            data: {name:name, developer:developer, publisher:publisher, price:price},
+            success: function(result) {
+                console.log(result);
+                if(result == 0)
+                    $('.addgame-alerts').html('<div class="alert alert-success" role="alert"> Successfully added game </div>');
+                else if(result == 1)
+                    $('.addgame-alerts').html('<div class="alert alert-danger" role="alert"> Something went wrong adding a game into the database </div>');
+                else
+                    $('.addgame-alerts').html('<div class="alert alert-danger" role="alert"> Game already exists </div>');
+            }
+        });
+    });
 });

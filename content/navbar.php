@@ -15,6 +15,7 @@
                         <li id="home"><a href="index.php"> Home </a></li>
                         <li id="viewgames"><a href="viewgames.php"> View Games </a></li>
                         <li id="searchgame"><a href="searchgames.php"> Search Game </a></li>
+                        <?php if(isset($_SESSION['user'])) { echo '<li id="addgames"><a href="addgames.php"> Add Game </a></li>'; } ?>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <?php
