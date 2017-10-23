@@ -8,28 +8,24 @@
 
             <div class="container">
                 <div class="col-lg-6 col-md-6 col-sm-10 col-lg-offset-3 col-md-offset-3 col-sm-offset-1">
-                    <div id="register-alerts"></div>
+                    <div class="register-alerts"></div>
                     <div class="jumbotron">
                         <h4 class="register-title"> Registration Form </h4>
                         <form>
                             <fieldset>
                                 <div class="form-group">
                                     <label> Username </label>
-                                    <input type="text" id="username" class="form-control" placeholder="Enter Username">
+                                    <input type="text" id="username" class="form-control" placeholder="Enter Username" required>
                                 </div>
                                 <div class="form-group">
                                     <label> Password </label>
-                                    <input type="password" id="password1" class="form-control" placeholder="Enter Password">
-                                </div>
-                                <div class="form-group">
-                                    <label> Confirm Password </label>
-                                    <input type="password" id="password2" class="form-control" placeholder="Enter Password">
+                                    <input type="password" id="password" class="form-control" placeholder="Enter Password" required>
                                 </div>
                                 <div class="checkbox">
-                                    <input class="showpass" type="checkbox" onclick="showPasswordReg()">
-                                    <label> Show Password </label>
+                                    <input id="showpass" class="showpass" type="checkbox" onclick="showPass()">
+                                    <label for="showpass"> Show Password </label>
                                 </div>
-                                <input type="submit" value="Register" id="register" class="btn btn-custom btn-lg btn-block"/>
+                                <input type="submit" value="Register" class="btn btn-custom btn-lg btn-block register-btn"/>
                             </fieldset>
                         </form>
                     </div>
