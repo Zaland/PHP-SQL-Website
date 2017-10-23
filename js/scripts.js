@@ -56,10 +56,42 @@ $(document).ready(function() {
                 if(result == 0)
                     window.location.href = 'index.php';
                 else if(result == 1)
-                    $('.register-alerts').html('<div class="alert alert-danger" role="alert"> No such user exists </div>');
+                    $('.login-alerts').html('<div class="alert alert-danger" role="alert"> No such user exists </div>');
                 else
-                    $('.register-alerts').html('<div class="alert alert-danger" role="alert"> Username and/or password dont match </div>');
+                    $('.login-alerts').html('<div class="alert alert-danger" role="alert"> Username and/or password dont match </div>');
             }
         });
+    });
+    
+    // when the user types in parameters for the search and clicks the search button
+    // there is 1 error code and the result that is sent
+    // 1 = no data found in the search
+    $('.search-btn').click(function(e) {
+        e.preventDefault();
+        
+        var name = $('#name').val();
+        var developer = $('#developer').val();
+        var publisher = $('#publisher').val();
+        
+        $('.search-results').html('');
+        
+        // if no parameters entered, ask user to enter one
+        if(name == '' && developer == '' && publisher == '')
+            $('.search-alerts').html('<div class="alert alert-danger" role="alert"> Please enter at least one parameter for the search </div>');
+        
+        // if at least one paramter entered, begin the search
+        else {
+            $.ajax({
+                type: 'GET',
+                url: 'scripts/search_games.php',
+                data: {name:name, developer:developer, publisher:publisher},
+                success: function(result) {
+                    if(result == 1)
+                        $('.search-alerts').html('<div class="alert alert-danger" role="alert"> Nothing found, try different parameters </div>');
+                    else
+                        $('.search-results').html(result);
+                }
+            });
+        }
     });
 });

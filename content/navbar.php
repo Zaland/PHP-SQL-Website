@@ -14,12 +14,12 @@
                     <ul class="nav navbar-nav">
                         <li id="home"><a href="index.php"> Home </a></li>
                         <li id="viewgames"><a href="viewgames.php"> View Games </a></li>
-                        <li id="searchgame"><a href="#"> Search Game </a></li>
+                        <li id="searchgame"><a href="searchgames.php"> Search Game </a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <?php
                             if(isset($_SESSION['user'])) { 
-                                echo '  <li><a href="#"> Welcome back '.$_SESSION['user'].' </a></li>
+                                echo '  <li><a> Welcome back '.$_SESSION['user'].' </a></li>
                                         <li id="logout"><a href="scripts/sign_out.php"> Logout </a></li>';
                             }
                             else {

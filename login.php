@@ -8,7 +8,7 @@
 
             <div class="container">
                 <div class="col-lg-6 col-md-6 col-sm-10 col-lg-offset-3 col-md-offset-3 col-sm-offset-1">
-                    <div class="register-alerts"></div>
+                    <div class="login-alerts"></div>
                     <div class="jumbotron">
                         <h4 class="register-title"> Login Form </h4>
                         <form>
