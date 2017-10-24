@@ -11,6 +11,9 @@ function showPass() {
 }
 
 $(document).ready(function() {
+    // hide the edit form
+    $('.edit-form').addClass('hide-content');
+    
     // when the user clicks the registration button
     // there are 3 error codes that can be returned
     // 0 = successful user creation
@@ -113,13 +116,29 @@ $(document).ready(function() {
             url: 'scripts/insert_games.php',
             data: {name:name, developer:developer, publisher:publisher, price:price},
             success: function(result) {
-                console.log(result);
                 if(result == 0)
                     $('.addgame-alerts').html('<div class="alert alert-success" role="alert"> Successfully added game </div>');
                 else if(result == 1)
                     $('.addgame-alerts').html('<div class="alert alert-danger" role="alert"> Something went wrong adding a game into the database </div>');
                 else
                     $('.addgame-alerts').html('<div class="alert alert-danger" role="alert"> Game already exists </div>');
+            }
+        });
+    });
+    
+    // when user clicks on the delete icon when they are logged in
+    // after deletion, the row is deleted and is animated
+    $('.delete-game').click(function(e) {
+        e.preventDefault();
+        var id = $(this).attr('id');
+        
+        $.ajax({
+            type: 'GET',
+            url: 'scripts/delete_games.php',
+            data: {id:id},
+            success: function(result) {
+                var $tr = $('#' + id).parents('tr');
+                $tr.fadeOut('slow');
             }
         });
     });
