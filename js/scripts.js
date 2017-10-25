@@ -12,7 +12,7 @@ function showPass() {
 
 $(document).ready(function() {
     // hide the edit form
-    $('.edit-form').addClass('hide-content');
+    
     
     // when the user clicks the registration button
     // there are 3 error codes that can be returned
@@ -139,6 +139,44 @@ $(document).ready(function() {
             success: function(result) {
                 var $tr = $('#' + id).parents('tr');
                 $tr.fadeOut('slow');
+            }
+        });
+    });
+    
+    // when the edit icon is clicked in the form, load the form with values
+    // does not update the database
+    $('.edit-game').click(function(e) {
+        e.preventDefault();
+        var id = $(this).attr('id');
+        
+        // load the values from the row to the form
+        $('#edit-name').val($('.'+id).find('#1').text());
+        $('#edit-developer').val($('.'+id).find('#2').text());
+        $('#edit-publisher').val($('.'+id).find('#3').text());
+        $('#edit-price').val($('.'+id).find('#4').text());
+        
+        // set the id of the button to the id of the game in the database
+        $('.update-btn').attr('id', id);
+        
+        // show the hidden form
+        $('.edit-form').removeClass('hide-content');
+    });
+    
+    $('.update-btn').click(function(e) {
+        e.preventDefault();
+        
+        var id = $('.update-btn').attr('id');
+        var name = $('#edit-name').val();
+        var developer = $('#edit-developer').val();
+        var publisher = $('#edit-publisher').val();
+        var price = $('#edit-price').val();
+        
+        $.ajax({
+            type: 'GET',
+            url: 'scripts/update_games.php',
+            data: {id:id, name:name, developer:developer, publisher:publisher, price:price},
+            success: function(result) {
+                window.location.href = 'viewgames.php';
             }
         });
     });

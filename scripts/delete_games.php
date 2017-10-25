@@ -1,6 +1,6 @@
 <?php
     // include the database account information
-    include("dbconnect.php");
+    require("dbconnect.php");
 
     // store the value of the ID to delete
     $id = $_GET['id'];

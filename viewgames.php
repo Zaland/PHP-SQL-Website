@@ -47,15 +47,15 @@
         // loop through all rows in array
         while($row = $result->fetch())
         {
-            echo "              <tr class='table-elements'>
-                                    <td>".$row[1]."</td>
-                                    <td>".$row[2]."</td>
-                                    <td>".$row[3]."</td>
-                                    <td>".$row[4]."</td>";
+            echo "              <tr class='table-elements ".$row[0]."'>
+                                    <td id='1'>".$row[1]."</td>
+                                    <td id='2'>".$row[2]."</td>
+                                    <td id='3'>".$row[3]."</td>
+                                    <td id='4'>".$row[4]."</td>";
             
             // add two more options for users that are logged in
             if(isset($_SESSION['user'])) { 
-                echo "              <td><a class='edit-game' href='#'><span class='glyphicon glyphicon-pencil'></span></a></td>           
+                echo "              <td><a class='edit-game' href='#' id='$row[0]'><span class='glyphicon glyphicon-pencil'></span></a></td>           
                                     <td><a class='delete-game' href='#' id='$row[0]'><span class='glyphicon glyphicon-remove'></span></a></td>";
             }
             
@@ -66,30 +66,29 @@
                         </table>
                     </div>
                 </div>
-                <div class='container edit-form'>
+                <div class='container edit-form hide-content'>
                     <div class='col-lg-6 col-md-6 col-sm-10 col-lg-offset-3 col-md-offset-3 col-sm-offset-1'>
-                        <div class='addgame-alerts'></div>
                         <div class='jumbotron'>
-                            <h4 class='register-title'> Add Game </h4>
+                            <h4 class='form-title'> Update Game </h4>
                             <form>
                                 <fieldset>
                                     <div class='form-group'>
                                         <label> Name </label>
-                                        <input type='text' id='name' class='form-control' placeholder='Enter Name'>
+                                        <input type='text' id='edit-name' class='form-control' placeholder='Enter Name'>
                                     </div>
                                     <div class='form-group'>
                                         <label> Developer </label>
-                                        <input type='text' id='developer' class='form-control' placeholder='Enter Developer'>
+                                        <input type='text' id='edit-developer' class='form-control' placeholder='Enter Developer'>
                                     </div>
                                     <div class='form-group'>
                                         <label> Publisher </label>
-                                        <input type='text' id='publisher' class='form-control' placeholder='Enter Publisher'>
+                                        <input type='text' id='edit-publisher' class='form-control' placeholder='Enter Publisher'>
                                     </div>
                                     <div class='form-group'>
                                         <label> Price </label>
-                                        <input type='text' id='price' class='form-control' placeholder='Enter Price'>
+                                        <input type='text' id='edit-price' class='form-control' placeholder='Enter Price'>
                                     </div>
-                                    <input type='submit' value='Add Game' class='btn btn-custom btn-lg btn-block addgame-btn'/>
+                                    <input type='submit' value='Update Game' class='btn btn-custom btn-lg btn-block update-btn'/>
                                 </fieldset>
                             </form>
                         </div>
