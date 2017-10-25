@@ -150,10 +150,10 @@ $(document).ready(function() {
         var id = $(this).attr('id');
         
         // load the values from the row to the form
-        $('#edit-name').val($('.'+id).find('#1').text());
-        $('#edit-developer').val($('.'+id).find('#2').text());
-        $('#edit-publisher').val($('.'+id).find('#3').text());
-        $('#edit-price').val($('.'+id).find('#4').text());
+        $('#edit-name').val($('.'+id).find('#val1').text());
+        $('#edit-developer').val($('.'+id).find('#val2').text());
+        $('#edit-publisher').val($('.'+id).find('#val3').text());
+        $('#edit-price').val($('.'+id).find('#val4').text());
         
         // set the id of the button to the id of the game in the database
         $('.update-btn').attr('id', id);
@@ -162,6 +162,7 @@ $(document).ready(function() {
         $('.edit-form').removeClass('hide-content');
     });
     
+    // updates the game when clicked on, sends data to php which updates the database
     $('.update-btn').click(function(e) {
         e.preventDefault();
         

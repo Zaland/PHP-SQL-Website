@@ -48,10 +48,10 @@
         while($row = $result->fetch())
         {
             echo "              <tr class='table-elements ".$row[0]."'>
-                                    <td id='1'>".$row[1]."</td>
-                                    <td id='2'>".$row[2]."</td>
-                                    <td id='3'>".$row[3]."</td>
-                                    <td id='4'>".$row[4]."</td>";
+                                    <td id='val1'>".$row[1]."</td>
+                                    <td id='val2'>".$row[2]."</td>
+                                    <td id='val3'>".$row[3]."</td>
+                                    <td id='val4'>".$row[4]."</td>";
             
             // add two more options for users that are logged in
             if(isset($_SESSION['user'])) { 
