@@ -10,7 +10,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-10 col-lg-offset-3 col-md-offset-3 col-sm-offset-1">
                     <div class="register-alerts"></div>
                     <div class="jumbotron">
-                        <h4 class="register-title"> Registration Form </h4>
+                        <h4 class="form-title"> Registration Form </h4>
                         <form>
                             <fieldset>
                                 <div class="form-group">
